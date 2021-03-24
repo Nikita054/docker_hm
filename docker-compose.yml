@@ -1,0 +1,16 @@
+version: "3.4"
+
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.38.0/24
+
+services:
+  main_service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
