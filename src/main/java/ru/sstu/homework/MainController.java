@@ -17,7 +17,7 @@ public class MainController {
         BufferedWriter out = null;
 
         try {
-            FileWriter fstream = new FileWriter("logs.txt", true); //true tells to append data.
+            FileWriter fstream = new FileWriter("/logs/logs.txt", true); //true tells to append data.
             out = new BufferedWriter(fstream);
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             String message = timestamp + " - " + text + "\n";

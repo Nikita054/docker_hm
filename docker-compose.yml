@@ -12,5 +12,12 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    volumes:
+      - ./logs:/logs
     ports:
       - 8081:8080
+  logs_collector:
+    image: main_image:latest
+    volumes:
+      - ./logs:/logs
+    command: cat logs/logs.txt
